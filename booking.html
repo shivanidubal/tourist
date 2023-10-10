@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Now</title>
+    <style>
+        body {
+  width: 500px;
+  margin: 0 auto;
+  padding: 50px;
+  background-color: skyblue;
+}
+
+div.elem-group {
+  margin: 20px 0;
+}
+
+div.elem-group.inlined {
+  width: 49%;
+  display: inline-block;
+  float: left;
+  margin-left: 1%;
+}
+
+label {
+  display: block;
+  font-family: 'Nanum Gothic';
+  padding-bottom: 10px;
+  font-size: 1.25em;
+}
+
+input, select, textarea {
+  border-radius: 2px;
+  border: 2px solid #777;
+  box-sizing: border-box;
+  font-size: 1.25em;
+  font-family: 'Nanum Gothic';
+  width: 100%;
+  padding: 10px;
+}
+
+div.elem-group.inlined input {
+  width: 95%;
+  display: inline-block;
+}
+
+textarea {
+  height: 250px;
+}
+
+hr {
+  border: 1px dotted white;
+}
+
+button {
+  height: 50px;
+  background: orangered;
+  border: none;
+  color: white;
+  font-size: 1.25em;
+  font-family: 'Nanum Gothic';
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  border: 2px solid black;
+}
+h1{
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+  <header>
+    <a href="home.html" class="btn btn-secondary">Home</a>
+</header>
+
+    <h1>Book Now</h1>
+    <form action="reservation.php" method="post">
+        <div class="elem-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="visitor_name" placeholder="Please Enter Your Name" required>
+        </div>
+
+        <div class="elem-group">
+          <label for="email">Your E-mail</label>
+          <input type="email" id="email" name="visitor_email" placeholder="abc@email.com" required>
+        </div>
+
+        <div class="elem-group">
+          <label for="phone">Your Phone</label>
+          <input type="tel" id="phone" name="visitor_phone" required>
+        </div>
+        <hr>
+
+        <div class="elem-group inlined">
+          <label for="adult">Adults</label>
+          <input type="number" id="adult" name="total_adults" placeholder="2" min="1" required>
+        </div>
+
+        <div class="elem-group inlined">
+          <label for="child">Children</label>
+          <input type="number" id="child" name="total_children" placeholder="2" min="0" required>
+        </div>
+
+        <div class="elem-group inlined">
+          <label for="checkin-date">Date</label>
+          <input type="date" id="checkin-date" name="checkin" required>
+        </div>
+        
+        <div class="elem-group">
+          <label for="room-selection">Select City</label>
+          <select id="city-selection" name="city" required>
+              <option value="">Choose a city from the List</option>
+              <option value="connecting">Mysure</option>
+              <option value="adjoining">Manali</option>
+              <option value="adjacent">Mumbai</option>
+              <option value="adjacent">Pune</option>
+              <option value="adjacent">Delhi</option>
+              <option value="adjacent">Goa</option>
+              <option value="adjacent">Karnataka</option>
+              <option value="adjacent">Hydrabaad</option>
+          </select>
+        </div>
+        <hr>
+        <div class="elem-group">
+          <label for="message">Anything Else?</label>
+          <textarea id="message" name="visitor_message" placeholder="Tell us anything else that might be important." required></textarea>
+        </div>
+        <button type="submit">Booking Now</button>
+      </form>
+</body>
+</html>
